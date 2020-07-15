@@ -1,0 +1,3 @@
+interface SessionInfoProvider {
+    fun getSessionId()
+}
