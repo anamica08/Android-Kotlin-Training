@@ -96,6 +96,22 @@ class MainActivity : AppCompatActivity() {
         buttonMinus.setOnClickListener(opListener)
         buttonPlus.setOnClickListener(opListener)
 
+
+
+        buttonNeg.setOnClickListener({v->
+            val value = newNumber.text.toString()
+            if(value.isEmpty()){
+                newNumber.setText("-")
+            }else{
+
+            }
+        })
+
+        buttonCancel.setOnClickListener({v->
+            resultEditText.setText("")
+        })
+
+
     }
 
     private fun performOperation(value: Double, operation: String) {
