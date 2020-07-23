@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Apple Rss Feed</string>
+    <string name="app_name">iTunes Top Songs</string>
+    <string name="textview">TextView</string>
+    <string name="free_apps">Free Apps</string>
+    <string name="paid_apps">Paid Apps</string>
+    <string name="songs">Songs</string>
+
 </resources>
