@@ -2,18 +2,24 @@
 
 package com.example.applerssfeed
 
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.applerssfeed.Model.FeedEntry
+import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URL
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val download = Downloader()
-        download.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=10/xml")
+        val download = Downloader(this, listView_Feed)
+        download.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml")
     }
 
 
@@ -26,8 +32,20 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
-        class Downloader : AsyncTask<String, Void, String>() {
+        class Downloader(context:Context ,  list:ListView) : AsyncTask<String, Void, String>() {
             private val TAG = "Downloader"
+
+            /* Strong reference is being created . this leaks a context object.
+            var propContext:Context = context
+            var propListView:ListView = list*/
+
+            var propContext:Context by Delegates.notNull()
+            var propListView:ListView by Delegates.notNull()
+
+            init{
+                propListView = list
+                propContext = context
+            }
 
             override fun doInBackground(vararg url: String?): String {
                 Log.d(TAG, "doInBackground starts with: ${url.firstOrNull()?:""}")
@@ -38,7 +56,12 @@ class MainActivity : AppCompatActivity() {
             override fun onPostExecute(result: String) {
                 super.onPostExecute(result)
                Log.d(TAG, "onPostExecute")
-               Parser().parse(result)
+                /*observation : It is mandatory to create a object and access the list through that only.*/
+               var parseModule =  Parser()
+                parseModule.parse(result)
+
+                val arrayAdaptor =  ArrayAdapter<FeedEntry>(propContext,R.layout.list_item,parseModule.getListOfFeeds())
+                propListView.adapter = arrayAdaptor
             }
 
             //            fun downloadXML(url: String): String {

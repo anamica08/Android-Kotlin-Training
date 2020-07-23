@@ -6,13 +6,17 @@ import org.xmlpull.v1.XmlPullParser
 import java.lang.Exception
 import  org.xmlpull.v1.XmlPullParserFactory
 
-class Parser {
+public class Parser {
     private val TAG = "Parser"
 
     val application = ArrayList<FeedEntry>()
 
+    fun getListOfFeeds():ArrayList<FeedEntry>{
+        return application
+    }
+
     fun parse(xmlData:String):Boolean{
-        Log.d(TAG, "parse: $xmlData")
+
         var status = true
         var textValue = ""
         var inEntry = false
@@ -22,18 +26,18 @@ class Parser {
             factory.isNamespaceAware = true
             val xpp = factory.newPullParser()
             xpp.setInput(xmlData.reader())
-            Log.d(TAG, "parse: objectt  $xpp")
+
             var eventType = xpp.eventType
-            Log.d(TAG, "parse: ${xpp.eventType}")
+
             var currentRecord = FeedEntry()
             while (eventType != XmlPullParser.END_DOCUMENT){
                 val tagName = xpp.name?.toLowerCase()
                // Log.d(TAG, "parse: xpp.name() = $tagName")
-                Log.d(TAG, "parse: ${xpp.eventType}")
+
                 when(eventType){
 
                     XmlPullParser.START_TAG -> {
-                        Log.d(TAG, "parse: Starting Tag: $tagName")
+                       // Log.d(TAG, "parse: Starting Tag: $tagName")
                         // if tag is Entry tag then inEntry = true signals that the parser has reached into entry tag.
                         if(tagName == "entry"){
                             inEntry = true
@@ -46,7 +50,7 @@ class Parser {
                     //our intrest and thus we will serialise to FeedEntry object.
                     
                     XmlPullParser.END_TAG -> {
-                        Log.d(TAG, "parse: Ending Tag: $tagName")
+                        //Log.d(TAG, "parse: Ending Tag: $tagName")
                         if(inEntry){
                             when (tagName) {
                                 "entry" -> {
@@ -68,11 +72,12 @@ class Parser {
                 eventType = xpp.next()
 
             }
+            Log.d(TAG, "parse: Data Length: ${application.size}")
 
-            for (app in application) {
-                Log.d(TAG,"*******************")
-                Log.d(TAG,app.toString())
-            }
+//            for (app in application) {
+//                Log.d(TAG,"*******************")
+//                Log.d(TAG,app.toString())
+//            }
         }catch (e:Exception){
             e.printStackTrace()
             status = false
