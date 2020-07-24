@@ -6,22 +6,25 @@ import org.xmlpull.v1.XmlPullParser
 import java.lang.Exception
 import  org.xmlpull.v1.XmlPullParserFactory
 
-public class Parser {
+public class XmlParser {
     private val TAG = "Parser"
+
+    var feedTitle = "Top 10 Songs"
+        private set
 
     val application = ArrayList<FeedEntry>()
 
-    fun getListOfFeeds():ArrayList<FeedEntry>{
+    fun getListOfFeeds(): ArrayList<FeedEntry> {
         return application
     }
 
-    fun parse(xmlData:String):Boolean{
+    fun parse(xmlData: String): Boolean {
 
         var status = true
         var textValue = ""
         var inEntry = false
 
-        try{
+        try {
             val factory = XmlPullParserFactory.newInstance()
             factory.isNamespaceAware = true
             val xpp = factory.newPullParser()
@@ -30,16 +33,16 @@ public class Parser {
             var eventType = xpp.eventType
 
             var currentRecord = FeedEntry()
-            while (eventType != XmlPullParser.END_DOCUMENT){
+            while (eventType != XmlPullParser.END_DOCUMENT) {
                 val tagName = xpp.name?.toLowerCase()
-               // Log.d(TAG, "parse: xpp.name() = $tagName")
+                // Log.d(TAG, "parse: xpp.name() = $tagName")
 
-                when(eventType){
+                when (eventType) {
 
                     XmlPullParser.START_TAG -> {
-                       // Log.d(TAG, "parse: Starting Tag: $tagName")
+                         //Log.d(TAG, "parse: Starting Tag: $tagName")
                         // if tag is Entry tag then inEntry = true signals that the parser has reached into entry tag.
-                        if(tagName == "entry"){
+                        if (tagName == "entry") {
                             inEntry = true
                         }
                     }
@@ -48,10 +51,14 @@ public class Parser {
 
                     //we will check if inEntry is true and end tag is Entry then the data read into textValue is of
                     //our intrest and thus we will serialise to FeedEntry object.
-                    
+
                     XmlPullParser.END_TAG -> {
                         //Log.d(TAG, "parse: Ending Tag: $tagName")
-                        if(inEntry){
+                        if(tagName == "title" && inEntry == false){
+                            feedTitle = textValue
+                            Log.d(TAG, "parse: Title set to $feedTitle and $textValue")
+                        }
+                        if (inEntry) {
                             when (tagName) {
                                 "entry" -> {
                                     application.add(currentRecord)
@@ -72,13 +79,13 @@ public class Parser {
                 eventType = xpp.next()
 
             }
-            Log.d(TAG, "parse: Data Length: ${application.size}")
+            Log.d(TAG, "parse: Feed Title: $feedTitle")
 
 //            for (app in application) {
 //                Log.d(TAG,"*******************")
 //                Log.d(TAG,app.toString())
 //            }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
             status = false
         }

@@ -27,14 +27,12 @@ class FeedAdapter(context: Context, private val resource :Int, private val colle
 
     private val inflator = LayoutInflater.from(context)
     override fun getCount(): Int {
-        Log.d(TAG, "getCount")
+
         return collection.size
 
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        Log.d(TAG, "getView")
-
         val view: View
         val viewHolder:ViewHolder
 // if view is already present and saved to view holder , we will reuse it instea of inflationa new one eveytime.

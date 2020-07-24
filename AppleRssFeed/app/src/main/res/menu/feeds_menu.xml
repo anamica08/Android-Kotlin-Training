@@ -6,9 +6,29 @@
         android:id="@+id/mnufree"
         android:title="@string/free_apps" />
     <item
+        android:id="@+id/mnuAlbums"
+        android:title="@string/albums" />
+    <item
         android:id="@+id/mnupaid"
         android:title="@string/paid_apps" />
     <item
         android:id="@+id/mnusongs"
         android:title="@string/songs" />
+    <group
+        android:id="@+id/count_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/ten"
+            android:checked="true"
+            android:title="@string/_10" />
+        <item
+            android:id="@+id/twentyfive"
+            android:checked="false"
+            android:title="@string/_25" />
+
+    </group>
+    <item
+        android:id="@+id/mnuRefresh"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:title="Refresh" />
 </menu>

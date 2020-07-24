@@ -3,70 +3,137 @@
 package com.example.applerssfeed
 
 import android.content.Context
+import android.icu.text.CaseMap
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.applerssfeed.Model.FeedEntry
 import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URL
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
-    //make sure to add lazy initlialisation . because we are referring to view before setContentLayout
+    private val TAG = "MainActivity"
 
-    private val downloader by lazy { Downloader(this, listView_Feed) }
+    //Make sure to add lazy initlialisation . because we are referring to view before setContentLayout
+    private var downloader: Downloader? = null
+    private var feedLimit: Int = 10
+    var feedURL: String = UrlGenerator()
+        .getUrl(feedLimit, AppCategory.SONGS)
+
+    private var feedChachedURL = "INVALIDATE"
+    private val STATE_URL = "feedURL"
+    private val STATE_LIMIT = "feedLimit"
+
+    private lateinit var title:String
+
+    /**
+     * onCreate
+     * starts the activity
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        downloader.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=200/xml")
+        if (savedInstanceState != null) {
+            //Log.d(TAG, "onCreate: Bundle Restored")
+            feedLimit = savedInstanceState.getInt(STATE_LIMIT)
+            feedURL = savedInstanceState.getString(STATE_URL).toString()
+        }
+
+        downloadURL(feedURL)
     }
-    private fun downloadURL(feedUrl:String){
-        downloader.execute(feedUrl)
+
+    /*
+    * initiates the ASYNCTASK to start downloading in background thread
+    * */
+    private fun downloadURL(feedUrl: String) {
+        if (feedUrl != feedChachedURL) {
+            downloader = Downloader(this, listView_Feed,tv_title)
+            feedChachedURL = feedUrl
+            downloader!!.execute(feedUrl)
+        }
+
     }
+
+
+    /**
+     * Inflates the Menu on View.
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.feeds_menu,menu)
+        menuInflater.inflate(R.menu.feeds_menu, menu)
+        if (feedLimit == 10) {
+            menu?.findItem(R.id.ten)?.isChecked = true
+        } else {
+            menu?.findItem(R.id.twentyfive)?.isChecked = true
+        }
         return true
     }
 
+    /**
+     * OnItemSelected Event Listener
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val feedURL: String
-        when(item.itemId){
+        when (item.itemId) {
             R.id.mnufree -> {
-                feedURL = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=25/xml"
+                feedURL = UrlGenerator()
+                    .getUrl(feedLimit, AppCategory.FREE_APPS)
+            }
+            R.id.mnuAlbums -> {
+                feedURL = UrlGenerator().getUrl(feedLimit, AppCategory.ALBUMS)
             }
             R.id.mnupaid -> {
-                feedURL = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=25/xml"
+                feedURL = UrlGenerator()
+                    .getUrl(feedLimit, AppCategory.PAID_APPS)
             }
-            R.id.mnusongs-> {
-                feedURL = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml"
+            R.id.mnusongs -> {
+                feedURL = UrlGenerator()
+                    .getUrl(feedLimit, AppCategory.SONGS)
             }
+            R.id.ten, R.id.twentyfive -> {
+                if (!item.isChecked) {
+                    item.isChecked = true
+                    feedLimit = 35 - feedLimit
+                }
+            }
+            R.id.mnuRefresh -> feedChachedURL = "INVALIDATE"
             else -> return super.onOptionsItemSelected(item)
         }
         downloadURL(feedURL)
         return true
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        downloader.cancel(true)
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        //Log.d(TAG, "onSaveInstanceState: Feed URL : $feedURL and Feed Limit : $feedLimit saved")
+        outState.putString(STATE_URL, feedURL)
+        outState.putInt(STATE_LIMIT, feedLimit)
+
     }
 
 
-    //companion object is the kotlin way of making this class a static class so it doesnot have direct reference to parent class.
+    override fun onDestroy() {
+        super.onDestroy()
+        //Log.d(TAG, "onDestroy: Activity destroyed")
+        downloader?.cancel(true)
+    }
 
-    // this is done to release the strong reference created when we created this inner class which cause problem of
-    //memory leak. ex: when we close the main activity ,it may happen that any refernce of main activity if tied to
-    //this class can prevent the object of this class from being garbage collected if it was in running state when we destroyed
-    //mian activity.
 
+    /*companion object is the kotlin way of making this class a static class so it doesnot have direct reference to parent class.
 
+     this is done to release the strong reference created when we created this inner class which cause problem of
+    memory leak. ex: when we close the main activity ,it may happen that any refernce of main activity if tied to
+    this class can prevent the object of this class from being garbage collected if it was in running state when we destroyed
+    main activity
+   .*/
+
+    /*Downloader Class*/
     companion object {
-        private class Downloader(context: Context, list: ListView) :
+        private class Downloader(context: Context, list: ListView , title: TextView) :
             AsyncTask<String, Void, String>() {
             private val TAG = "Downloader"
 
@@ -76,89 +143,36 @@ class MainActivity : AppCompatActivity() {
 
             var propContext: Context by Delegates.notNull()
             var propListView: ListView by Delegates.notNull()
+            var propTitle:TextView by Delegates.notNull()
+
 
             init {
                 propListView = list
                 propContext = context
+                propTitle = title
             }
 
             override fun doInBackground(vararg url: String?): String {
-                Log.d(TAG, "doInBackground starts with: ${url.firstOrNull() ?: ""}")
+//                Log.d(TAG, "doInBackground starts with: ${url.firstOrNull() ?: ""}")
                 val rssFeed = downloadXML(url.firstOrNull() ?: "")
                 return rssFeed
             }
 
             override fun onPostExecute(result: String) {
                 super.onPostExecute(result)
-                Log.d(TAG, "onPostExecute")
+
                 /*observation : It is mandatory to create a object and access the list through that only.*/
-                var parseModule = Parser()
+                val parseModule = XmlParser()
                 parseModule.parse(result)
 
-//                val arrayAdaptor = ArrayAdapter<FeedEntry>(
-//                    propContext,
-//                    R.layout.list_item,
-//                    parseModule.getListOfFeeds()
-//                )
-//                propListView.adapter = arrayAdaptor
+                propTitle.text = parseModule.feedTitle
                 /*Using Custom Adapter*/
-                val feedAdapter = FeedAdapter(propContext,R.layout.list_record,parseModule.application)
+                val feedAdapter =
+                    FeedAdapter(propContext, R.layout.list_record, parseModule.application)
                 propListView.adapter = feedAdapter
             }
 
-            //            fun downloadXML(url: String): String {
-//                var xmlResult = StringBuilder()
-//                try {
-//                    var urlPath = URL(url)
-//                    //open the connection
-//                    val connection: HttpURLConnection =
-//                        urlPath.openConnection() as HttpURLConnection
-//                    val responseCode = connection.responseCode
-//                    Log.d(TAG, "downloadXML: ResponseCode: $responseCode")
-//
-////                    val inputStream = connection.inputStream
-////                    val inputStreamReader = InputStreamReader(inputStream)
-////                    //we will use a buffered reader to get the content
-////                    val reader = BufferedReader(inputStreamReader)
-//
-//
-//                    //we can chain these so that on closing buffered reader it will automatically close other io streams
-////                    val reader = BufferedReader(InputStreamReader(connection.inputStream))
-////
-////                    val buffer = CharArray(500)
-////                    var charRead = 0
-////                    while(charRead >= 0){
-////                        charRead = reader.read(buffer)  //return the count of chars read .
-////                        if(charRead > 0){
-////                            xmlResult = xmlResult.append(String(buffer,0,charRead))
-////                        }
-////                    }
-////
-////                    reader.close()
-//
-//                    //lets use functional programming to replace above lines of code
-//                    val stream = connection.inputStream
-//                    stream.buffered().reader().use { reader->
-//                        xmlResult.append(reader.readText())
-//                    }
-//
-//                    Log.d(TAG, "downloadXML: XMLResult : ${xmlResult.length} bytes")
-//                    return  xmlResult.toString()
-//
-//                } catch (e:Exception){
-//                    var errorMessage:String = "No Exception";
-//                    when(e){
-//                        is MalformedURLException -> errorMessage = "Malformed URL Error."
-//                        is IOException -> errorMessage = "IO Error while reading data."
-//                        is SecurityException -> errorMessage = e.message.toString()
-//                        else -> errorMessage = e.message.toString()
-//                    }
-//                    Log.e(TAG, "downloadXML: $errorMessage")
-//                }
-//                return "" //if code reaches here there is some error in fetching data.
-//            }
-//        }
-//    }
+
             private fun downloadXML(url: String): String {
                 return URL(url).readText()
             }
