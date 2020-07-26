@@ -1,7 +1,6 @@
 package com.example.applerssfeed
 
-import android.util.Log
-import com.example.applerssfeed.AppCategory
+
 
 class UrlGenerator {
 

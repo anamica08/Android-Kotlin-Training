@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ListView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URL
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getSupportActionBar()?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar()?.setCustomView(R.layout.custom_toolbar);
 
         if (savedInstanceState != null) {
             //Log.d(TAG, "onCreate: Bundle Restored")
