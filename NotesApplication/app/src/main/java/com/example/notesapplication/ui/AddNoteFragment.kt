@@ -1,11 +1,15 @@
 package com.example.notesapplication.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
@@ -73,11 +77,12 @@ class AddNoteFragment : BaseFragment() {
                         Toast.makeText(it,"Note Updated",Toast.LENGTH_SHORT).show()
                     }
 
-
-                    val action = AddNoteFragmentDirections.actionSaveNote()
-                    Navigation.findNavController(view).navigate(action)
                 }
             }
+//            val inputManager:InputMethodManager =getSystemService(context,AddNoteFragment::class.java) as InputMethodManager
+//            inputManager.hideSoftInputFromWindow(view.windowToken, InputMethodManager.SHOW_FORCED)
+            val action = AddNoteFragmentDirections.actionSaveNote()
+            Navigation.findNavController(view).navigate(action)
 
 
         }
