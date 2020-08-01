@@ -33,16 +33,12 @@ class NotesAdapter(val notes:List<Note>): RecyclerView.Adapter<NotesAdapter.Note
 
         holder.view.delete_actionbutton.setOnClickListener {
             //delete the note from database
-
-            val note = notes[position]
-            Log.d(TAG, "onBindViewHolder: button $note")
-
             val action = HomeFragmentDirections.deleteNoteAction(notes[position])
             Navigation.findNavController(it).navigate(action)
-            //DeleteFragment().deleteNote(this,noteToDelete)
         }
 
         holder.view.setOnClickListener{
+            Log.d(TAG, "onBindViewHolder: List item clicked")
             val action = HomeFragmentDirections.actionAddNote()
             action.note = notes[position]
             Navigation.findNavController(it).navigate(action)

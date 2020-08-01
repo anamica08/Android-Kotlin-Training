@@ -42,7 +42,7 @@
             app:argType="com.example.notesapplication.db.Note"
             />
         <action
-            android:id="@+id/action_deleteFragment_to_homeFragment"
+            android:id="@+id/actionDeleteNote"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

@@ -32,13 +32,14 @@ class AddNoteFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
 
         //obtain the argument passed by homescreen
-        if(arguments == null  ){
+
             arguments?.let {
+                Log.d(TAG, "onActivityCreated: $arguments")
                 argNote = AddNoteFragmentArgs.fromBundle(it).note
-                editTextNote.setText(argNote!!.note)
-                editTextTitle.setText(argNote!!.title)
+                editTextNote.setText(argNote?.note)
+                editTextTitle.setText(argNote?.title)
             }
-        }
+
 
 
 

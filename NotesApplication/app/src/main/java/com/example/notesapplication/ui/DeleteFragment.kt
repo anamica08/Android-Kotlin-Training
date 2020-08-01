@@ -9,10 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
 import com.example.notesapplication.db.Note
 import com.example.notesapplication.db.NoteDatabase
+import kotlinx.android.synthetic.main.fragment_delete.*
 import kotlinx.coroutines.launch
 
 
@@ -28,20 +30,33 @@ class DeleteFragment : BaseFragment() {
     }
 
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Log.d(TAG, "deleteNote: Deleting note $arguments")
+
+
+
         arguments?.let {
             val note = DeleteFragmentArgs.fromBundle(it).noteToDelete
 
-            launch {
-                Log.d(TAG, "deleteNote: Deleting note $note")
-                context?.let { it1 -> NoteDatabase(it1).getNoteDao().deleteNote(note) }
-                Toast.makeText(context, "Note Deleted", Toast.LENGTH_SHORT).show()
+            yes.setOnClickListener {
+                launch {
+                    context?.let { it1 -> NoteDatabase(it1).getNoteDao().deleteNote(note) }
+                    Toast.makeText(context, "Note Deleted", Toast.LENGTH_SHORT).show()
 
+                }
+                val action = DeleteFragmentDirections.actionDeleteNote()
+                view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
+            }
+            no.setOnClickListener {
+                val action = DeleteFragmentDirections.actionDeleteNote()
+                view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
             }
 
+
+
         }
+
+
+
     }
 }
