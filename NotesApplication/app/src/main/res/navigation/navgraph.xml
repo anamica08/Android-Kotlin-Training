@@ -8,11 +8,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.notesapplication.ui.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" >
+        android:label="My Notes"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionAddNote"
             app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/deleteNoteAction"
+            app:destination="@id/deleteFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
@@ -21,6 +24,25 @@
         tools:layout="@layout/fragment_add_note" >
         <action
             android:id="@+id/actionSaveNote"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="note"
+            app:nullable="true"
+            app:argType="com.example.notesapplication.db.Note"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.example.notesapplication.ui.DeleteFragment"
+        android:label="Delete Note"
+        tools:layout="@layout/fragment_delete" >
+        <argument
+            android:name="note_to_delete"
+            app:nullable="false"
+            app:argType="com.example.notesapplication.db.Note"
+            />
+        <action
+            android:id="@+id/action_deleteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

@@ -1,8 +1,6 @@
 package com.example.notesapplication.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface NoteDao {
@@ -12,11 +10,17 @@ interface NoteDao {
 
 
     //note here is the table name same as the entity name
-    @Query("SELECT * FROM note")
+    @Query("SELECT * FROM note ORDER BY id DESC")
     suspend fun getAllNotes():List<Note>
 
     @Insert
     suspend fun addMultipleNotes(vararg note:Note)
+
+    @Update
+    suspend fun updateNote(note:Note)
+
+    @Delete
+    suspend fun deleteNote(note: Note)
 
     /***
      * suspend functions can only be called from coroutine scope

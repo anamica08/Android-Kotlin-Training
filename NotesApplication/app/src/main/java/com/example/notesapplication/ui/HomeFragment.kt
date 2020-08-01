@@ -1,18 +1,25 @@
 package com.example.notesapplication.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
+import com.example.notesapplication.db.Note
+import com.example.notesapplication.db.NoteDatabase
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.launch
 
-class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class HomeFragment : BaseFragment() {
+    private val TAG = "HomeFragment"
+
 
 
     override fun onCreateView(
@@ -25,21 +32,29 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
+
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL)
+
+        launch {
+            context?.let{
+                val noteList = NoteDatabase(it).getNoteDao().getAllNotes()
+                Log.d(TAG, "onActivityCreated: notes_fetched : $noteList")
+                recyclerView.adapter = NotesAdapter(noteList)
+            }
+        }
+
         button_add.setOnClickListener{
             val action = HomeFragmentDirections.actionAddNote()
+            action.note = null
             Navigation.findNavController(it).navigate(action)
         }
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
 
     }
+
+
+
 }
