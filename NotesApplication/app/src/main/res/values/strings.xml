@@ -6,5 +6,6 @@
     <string name="title">Title</string>
     <string name="you_cannot_undo_this_action">You cannot undo this action .</string>
     <string name="note">Note</string>
+    <string name="are_you_sure">Are You Sure?</string>
 
 </resources>

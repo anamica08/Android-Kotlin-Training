@@ -34,13 +34,12 @@
     <fragment
         android:id="@+id/deleteFragment"
         android:name="com.example.notesapplication.ui.DeleteFragment"
-        android:label="Delete Note"
-        tools:layout="@layout/fragment_delete" >
+        android:label=" Alert !!"
+        tools:layout="@layout/fragment_delete">
         <argument
             android:name="note_to_delete"
-            app:nullable="false"
             app:argType="com.example.notesapplication.db.Note"
-            />
+            app:nullable="false" />
         <action
             android:id="@+id/actionDeleteNote"
             app:destination="@id/homeFragment" />
