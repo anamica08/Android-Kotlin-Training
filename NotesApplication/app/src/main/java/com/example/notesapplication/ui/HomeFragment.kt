@@ -1,24 +1,26 @@
 package com.example.notesapplication.ui
 
-import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
-import com.example.notesapplication.db.NoteDatabase
+import com.example.notesapplication.db.Note
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.coroutines.launch
 
-class HomeFragment : BaseFragment() {
+class HomeFragment : Fragment() {
     private val TAG = "HomeFragment"
+
+    //we have created a view model factory class which will provide me an instance of view model with parameter.
+    //by default it only creates a instace with no parameter
+    private val model:NoteViewModel by viewModels{NoteViewModelFactory(requireActivity().application)}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,20 +52,30 @@ class HomeFragment : BaseFragment() {
         recyclerView.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
 
+        //adding notes
+        model.getNotes()?.observe(viewLifecycleOwner,Observer<List<Note>>{
+            recyclerView.adapter = activity?.applicationContext?.let { it1 -> NotesAdapter(it) }
+        })
+
+        //deleting notes
 
 
-        launch {
-            context?.let {
-                val noteList = NoteDatabase(it).getNoteDao().getAllNotes()
-                Log.d(TAG, "onActivityCreated: notes_fetched : $noteList")
-                recyclerView.adapter = NotesAdapter(noteList)
-            }
-        }
+
+
         button_add.setOnClickListener {
             val action = HomeFragmentDirections.actionAddNote()
             action.note = null
             Navigation.findNavController(it).navigate(action)
         }
+
+//        launch {
+//            context?.let {
+//                val noteList = NoteDatabase(it).getNoteDao().getAllNotes()
+//                Log.d(TAG, "onActivityCreated: notes_fetched : $noteList")
+//               // recyclerView.adapter = NotesAdapter(noteList)
+//            }
+//        }
+
     }
 
 //    fun openDialog() {

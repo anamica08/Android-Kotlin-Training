@@ -1,24 +1,24 @@
 package com.example.notesapplication.ui
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.notesapplication.db.Note
+import com.example.notesapplication.db.NoteRepository
 
-class NoteViewModel : ViewModel() {
+class NoteViewModel(application: Application) : ViewModel() {
     private val TAG = "NoteViewModel"
 
-    private var noteToDelete = MutableLiveData<Note>()
-    val note: LiveData<Note>
-        get() = noteToDelete
+    private var repository:NoteRepository = NoteRepository(application)
 
+    fun getNotes() = repository.getAllNotes()
 
+    fun addNotes(note:Note) = repository.addNote(note)
 
-    fun setValue (note:Note){
-        noteToDelete.value = note
-        Log.d(TAG, "setValue: Updated Note to delete ${noteToDelete.value}")
-    }
+    fun deleteNote(note:Note) = repository.deleteThisNote(note)
 
+    fun updateNote(note:Note) = repository.updateThisNote(note)
 
 }

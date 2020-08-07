@@ -28,6 +28,7 @@ abstract class NoteDatabase: RoomDatabase() {
             instance?: buildDatabase(context).also {
                 instance = it
             }
+
         }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(

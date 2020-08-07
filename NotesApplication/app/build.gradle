@@ -24,12 +24,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    //enable java 8 features
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
+    kotlinOptions { jvmTarget = "1.8" }
 }
+    //enable java 8 features
+
+
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

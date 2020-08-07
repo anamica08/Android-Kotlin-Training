@@ -10,18 +10,25 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
 import com.example.notesapplication.db.Note
 import com.example.notesapplication.db.NoteDatabase
 import kotlinx.android.synthetic.main.fragment_add_note.*
+import kotlinx.android.synthetic.main.fragment_delete.*
 import kotlinx.coroutines.launch
 
 
-class AddNoteFragment : BaseFragment() {
+class AddNoteFragment : Fragment() {
     private val TAG = "AddNoteFragment"
     private var argNote:Note? = null
+    //we have created a view model factory class which will provide me an instance of view model with parameter.
+    //by default it only creates a instace with no parameter
+    private val model:NoteViewModel by viewModels{NoteViewModelFactory(requireActivity().application)}
+
+
 
 
     override fun onCreateView(
@@ -38,7 +45,6 @@ class AddNoteFragment : BaseFragment() {
         //obtain the argument passed by homescreen
 
             arguments?.let {
-                Log.d(TAG, "onActivityCreated: $arguments")
                 argNote = AddNoteFragmentArgs.fromBundle(it).note
                 editTextNote.setText(argNote?.note)
                 editTextTitle.setText(argNote?.title)
@@ -64,21 +70,31 @@ class AddNoteFragment : BaseFragment() {
                 return@setOnClickListener
             }
 
-            launch {
-                Log.d(TAG, "onActivityCreated: $context")
-                context?.let {
-                    val noteToAdd = Note(title, note)
-                    if(argNote == null){
-                        NoteDatabase(it).getNoteDao().addNote(noteToAdd)
-                        Toast.makeText(it,"Note Added",Toast.LENGTH_SHORT).show()
-                    }else{
-                        noteToAdd.id = argNote!!.id
-                        NoteDatabase(it).getNoteDao().updateNote(noteToAdd)
-                        Toast.makeText(it,"Note Updated",Toast.LENGTH_SHORT).show()
-                    }
-
-                }
+            val notetoAdd = Note(title,note)
+            if(argNote == null){
+                model.addNotes(notetoAdd)
+                Toast.makeText(requireContext(),"Note Added",Toast.LENGTH_SHORT).show()
+            }else{
+                notetoAdd.id = argNote!!.id
+                model.updateNote(notetoAdd)
+                Toast.makeText(requireContext(),"Note Updated",Toast.LENGTH_SHORT).show()
             }
+
+//            launch {
+//                Log.d(TAG, "onActivityCreated: $context")
+//                context?.let {
+//                    val noteToAdd = Note(title, note)
+//                    if(argNote == null){
+//                        NoteDatabase(it).getNoteDao().addNote(noteToAdd)
+//                        Toast.makeText(it,"Note Added",Toast.LENGTH_SHORT).show()
+//                    }else{
+//                        noteToAdd.id = argNote!!.id
+//                        NoteDatabase(it).getNoteDao().updateNote(noteToAdd)
+//                        Toast.makeText(it,"Note Updated",Toast.LENGTH_SHORT).show()
+//                    }
+//
+//                }
+//            }
 //            val inputManager:InputMethodManager =getSystemService(context,AddNoteFragment::class.java) as InputMethodManager
 //            inputManager.hideSoftInputFromWindow(view.windowToken, InputMethodManager.SHOW_FORCED)
             val action = AddNoteFragmentDirections.actionSaveNote()

@@ -9,9 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.notesapplication.R
 import com.example.notesapplication.db.Note
 import kotlinx.android.synthetic.main.list_item.view.*
-import kotlin.contracts.contract
 
-class NotesAdapter(val notes:List<Note>): RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
+class NotesAdapter(val notes: List<Note>?): RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
     private val TAG = "NotesAdapter"
     class NoteViewHolder(val view:View) : RecyclerView.ViewHolder(view)
 
@@ -23,16 +22,17 @@ class NotesAdapter(val notes:List<Note>): RecyclerView.Adapter<NotesAdapter.Note
     }
 
     override fun getItemCount(): Int {
-        return notes.size
+        return if (notes != null) notes.size else throw NullPointerException("Expression 'notes' must not be null")
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.view.tv_title.text = notes[position].title
+        holder.view.tv_title.text = notes!![position].title
         holder.view.tv_note.text = notes[position].note
 
         holder.view.delete_actionbutton.setOnClickListener {
             //delete the note from database
-            HomeFragment().openDialog()
+            //HomeFragment().openDialog()
+
             val action = HomeFragmentDirections.deleteNoteAction(notes[position])
             Navigation.findNavController(it).navigate(action)
         }
