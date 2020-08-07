@@ -66,18 +66,18 @@ class HomeFragment : BaseFragment() {
         }
     }
 
-    fun openDialog() {
-      //  Log.d(TAG, "openDialog: $activity")
-        context?.let {
-            AlertDialog.Builder(it).apply {
-                setTitle("Are you sure?")
-                setMessage("You cannot undo this operation.")
-                setPositiveButton("Yes"){_,_ ->
-                    //Toast.makeText(this.context,"clicked",Toast.LENGTH_SHORT).show()
-                }
-            }.create().show()
-        }
-
-    }
+//    fun openDialog() {
+//      //  Log.d(TAG, "openDialog: $activity")
+//        context?.let {
+//            AlertDialog.Builder(it).apply {
+//                setTitle("Are you sure?")
+//                setMessage("You cannot undo this operation.")
+//                setPositiveButton("Yes"){_,_ ->
+//                    //Toast.makeText(this.context,"clicked",Toast.LENGTH_SHORT).show()
+//                }
+//            }.create().show()
+//        }
+//
+//    }
 
 }
