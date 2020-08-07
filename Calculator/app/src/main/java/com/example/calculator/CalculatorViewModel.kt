@@ -1,11 +1,9 @@
 package com.example.calculator
 
-import android.widget.Button
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 
 class CalculatorViewModel : ViewModel() {
 
@@ -57,7 +55,7 @@ class CalculatorViewModel : ViewModel() {
 
     }
 
-    fun negButtonPressed(){
+    fun negButtonPressed() {
         val value = newNumber.value.toString()
         if(value.isEmpty()){
             newNumber.value = "-"
