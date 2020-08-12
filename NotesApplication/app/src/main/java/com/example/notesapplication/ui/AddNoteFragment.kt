@@ -1,24 +1,16 @@
 package com.example.notesapplication.ui
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
-import com.example.notesapplication.BaseFragment
 import com.example.notesapplication.R
 import com.example.notesapplication.db.Note
-import com.example.notesapplication.db.NoteDatabase
 import kotlinx.android.synthetic.main.fragment_add_note.*
-import kotlinx.android.synthetic.main.fragment_delete.*
-import kotlinx.coroutines.launch
 
 
 class AddNoteFragment : Fragment() {

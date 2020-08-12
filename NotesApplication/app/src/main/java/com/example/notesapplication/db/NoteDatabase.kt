@@ -11,10 +11,13 @@ import androidx.room.RoomDatabase
 )
 
 //functions to get dao
-abstract class NoteDatabase: RoomDatabase() {
+abstract class NoteDatabase(): RoomDatabase() {
     //here only 1 dao so
     abstract fun getNoteDao():NoteDao
     //above fun will give us a dao and with dao we get entity and with entity we do CRUD
+
+    //private constructor is a feature that makes it singleton
+
 
     //build room database
     companion object{
