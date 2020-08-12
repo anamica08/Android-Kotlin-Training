@@ -7,5 +7,8 @@ import dagger.Component
 @Component
 interface CarComponent {
 
-    fun getCarInstance():Car;
+    fun getCarInstance():Car
+
+    fun inject(mainActivity: MainActivity)
+
 }
