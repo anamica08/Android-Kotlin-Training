@@ -1,7 +1,7 @@
 package com.learningandroid.daggerhandson
 
 import android.util.Log
-import com.learningandroid.daggerhandson.Engine.Engine
+import com.learningandroid.daggerhandson.engine.Engine
 import com.learningandroid.daggerhandson.wheels.Wheels
 import javax.inject.Inject
 
@@ -16,6 +16,7 @@ class Car @Inject constructor(private val wheel: Wheels, private val engine: Eng
     }
 
     fun drive(){
+        engine.start()
         Log.d(TAG, "drive:  Driving................ ")
     }
 }
