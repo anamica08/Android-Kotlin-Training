@@ -1,0 +1,19 @@
+(if all the methoda are static , make you class abstract)
+(make all the @provides static, so that dagger donot need to create instamce to use them)
+
+1. 3 type of injections are:
+       a) constructor injection using @inject
+       b) feild injection - used when you cannot do constructor injection for example: Activity constructor
+          cannot be used for injection cz its genrated by Android.
+       c) method injection - try not to use it in main activity.
+2. to do injection on 3rd party applications. we create a module class @Module with all static methods that
+    are responsible to provide instances for injection. using @provides annotation.
+    so, we can either use @provides or @inject to create instances at runtime for injection.Both are responsible
+    for telling dagger how to get instance of a particular type.
+3. when we have a interface used as a type , now interface cannot have a constructor neither can have a instance which can be provided.
+    so, we use the implementation clases of interface and create constructor with inject keyword. and also we create a
+    module class to bind this implementation with the interface reference and provide its instance .
+    (we can also use provider method to provide instance of implementation class.)
+    Another way to bind the interface reference to implemenation instance is by creating a abstract method with return type as interface and
+    parameter as implementaion reference and decorate method with @Bind
+4. Supplying data at runtime

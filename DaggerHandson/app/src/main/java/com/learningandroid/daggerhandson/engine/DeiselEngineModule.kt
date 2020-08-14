@@ -6,15 +6,9 @@ import dagger.Provides
 
 
 @Module
-abstract class DeiselEngineModule() {
-    
-
-    companion object{
+class DeiselEngineModule(private val horsepower:Int) {
         @Provides
-        fun providePetrolEngine(engine:DeiselEngine):Engine{
-            return engine
+        fun provideDeiselEngine():Engine{
+            return DeiselEngine(horsepower = horsepower)
         }
-    }
-
-
 }

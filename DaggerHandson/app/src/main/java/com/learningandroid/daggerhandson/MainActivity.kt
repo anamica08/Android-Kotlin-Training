@@ -2,6 +2,7 @@ package com.learningandroid.daggerhandson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.learningandroid.daggerhandson.engine.DeiselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
 
-        val component:CarComponent = DaggerCarComponent.create()
+
+        val component:CarComponent = DaggerCarComponent.builder()
+            .deiselEngineModule(DeiselEngineModule(100))
+            .build()
         //component.getCarInstance().drive()
         //now lets inject car instance (feild injection)
         /***
