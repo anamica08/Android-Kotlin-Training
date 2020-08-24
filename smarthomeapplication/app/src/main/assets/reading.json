@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "0",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0730947881884721"
+  },
+  {
+    "id": "1",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.109095494122844"
+  },
+  {
+    "id": "2",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.128888721121005"
+  },
+  {
+    "id": "3",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.000396476713487145"
+  },
+  {
+    "id": "4",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0205099011920252"
+  },
+  {
+    "id": "5",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0773457960156948"
+  },
+  {
+    "id": "6",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0742626364520231"
+  },
+  {
+    "id": "7",
+    "Timezone": "2020-08-20 21:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "8",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.118192786226074"
+  },
+  {
+    "id": "9",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0296743028318925"
+  },
+  {
+    "id": "10",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.112800116547411"
+  },
+  {
+    "id": "11",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.110110119419012"
+  },
+  {
+    "id": "12",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.130697817508337"
+  },
+  {
+    "id": "13",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0802118028563303"
+  },
+  {
+    "id": "14",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0878907530979119"
+  },
+  {
+    "id": "15",
+    "Timezone": "2020-08-20 22:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "16",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0189351814715028"
+  },
+  {
+    "id": "17",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.121434714811001"
+  },
+  {
+    "id": "18",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0183384712351076"
+  },
+  {
+    "id": "19",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0209039856835341"
+  },
+  {
+    "id": "20",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0083117372995515"
+  },
+  {
+    "id": "21",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0978463081952364"
+  },
+  {
+    "id": "22",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0921271921723239"
+  },
+  {
+    "id": "23",
+    "Timezone": "2020-08-20 23:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "24",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "25",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "26",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "27",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0419296763295122"
+  },
+  {
+    "id": "28",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.150530890149721"
+  },
+  {
+    "id": "29",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.00245515740132276"
+  },
+  {
+    "id": "30",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0291641649128264"
+  },
+  {
+    "id": "31",
+    "Timezone": "2020-08-21 00:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "32",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "33",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "34",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "35",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0533824230264894"
+  },
+  {
+    "id": "36",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0375808896455302"
+  },
+  {
+    "id": "37",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0514406330082542"
+  },
+  {
+    "id": "38",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.172156038055721"
+  },
+  {
+    "id": "39",
+    "Timezone": "2020-08-21 01:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "40",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "41",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "42",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "43",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0188425837485458"
+  },
+  {
+    "id": "44",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.164346130173556"
+  },
+  {
+    "id": "45",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0334485673217325"
+  },
+  {
+    "id": "46",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0315185063330205"
+  },
+  {
+    "id": "47",
+    "Timezone": "2020-08-21 02:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "48",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "49",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "50",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "51",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.435137417361359"
+  },
+  {
+    "id": "52",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0570360686466513"
+  },
+  {
+    "id": "53",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.228954501629651"
+  },
+  {
+    "id": "54",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.281272595457114"
+  },
+  {
+    "id": "55",
+    "Timezone": "2020-08-21 03:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "56",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "57",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "58",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "59",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.302298262817149"
+  },
+  {
+    "id": "60",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.163226009051671"
+  },
+  {
+    "id": "61",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.360781804585048"
+  },
+  {
+    "id": "62",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0942276522166798"
+  },
+  {
+    "id": "63",
+    "Timezone": "2020-08-21 04:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "64",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.000938579394242412"
+  },
+  {
+    "id": "65",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.428868108735294"
+  },
+  {
+    "id": "66",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.253802396065508"
+  },
+  {
+    "id": "67",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.198824326719934"
+  },
+  {
+    "id": "68",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.116717772457948"
+  },
+  {
+    "id": "69",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.494986987134976"
+  },
+  {
+    "id": "70",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.193041726369759"
+  },
+  {
+    "id": "71",
+    "Timezone": "2020-08-21 05:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "72",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.469171977383903"
+  },
+  {
+    "id": "73",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.178364427055248"
+  },
+  {
+    "id": "74",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.314735814119895"
+  },
+  {
+    "id": "75",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.123926998346662"
+  },
+  {
+    "id": "76",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.480929426588634"
+  },
+  {
+    "id": "77",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.876474712656576"
+  },
+  {
+    "id": "78",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.0443066858004479"
+  },
+  {
+    "id": "79",
+    "Timezone": "2020-08-21 06:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "80",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.890269853069885"
+  },
+  {
+    "id": "81",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.81816552788278"
+  },
+  {
+    "id": "82",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.27022679179694"
+  },
+  {
+    "id": "83",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.319355713007734"
+  },
+  {
+    "id": "84",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.522896246832221"
+  },
+  {
+    "id": "85",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.89135184874427"
+  },
+  {
+    "id": "86",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.976261268906262"
+  },
+  {
+    "id": "87",
+    "Timezone": "2020-08-21 07:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "88",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.243830796125943"
+  },
+  {
+    "id": "89",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.64331653076692"
+  },
+  {
+    "id": "90",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.683757925344123"
+  },
+  {
+    "id": "91",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.897679069412208"
+  },
+  {
+    "id": "92",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.150732815509301"
+  },
+  {
+    "id": "93",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.206197957753971"
+  },
+  {
+    "id": "94",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.196525022686462"
+  },
+  {
+    "id": "95",
+    "Timezone": "2020-08-21 08:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "96",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.308308161943484"
+  },
+  {
+    "id": "97",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.378560447800836"
+  },
+  {
+    "id": "98",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.316559395188622"
+  },
+  {
+    "id": "99",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.306693464014936"
+  },
+  {
+    "id": "100",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.105029149009318"
+  },
+  {
+    "id": "101",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "102",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "103",
+    "Timezone": "2020-08-21 09:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "104",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0751895040656616"
+  },
+  {
+    "id": "105",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.126282217942384"
+  },
+  {
+    "id": "106",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.134798362450799"
+  },
+  {
+    "id": "107",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.146408293027656"
+  },
+  {
+    "id": "108",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.151959605971249"
+  },
+  {
+    "id": "109",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "110",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "111",
+    "Timezone": "2020-08-21 10:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "112",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.153606856776845"
+  },
+  {
+    "id": "113",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0253855417233339"
+  },
+  {
+    "id": "114",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.188254276072879"
+  },
+  {
+    "id": "115",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.196375344611311"
+  },
+  {
+    "id": "116",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.0805446691504023"
+  },
+  {
+    "id": "117",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "118",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "119",
+    "Timezone": "2020-08-21 11:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "120",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.178700149748506"
+  },
+  {
+    "id": "121",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0336615348591113"
+  },
+  {
+    "id": "122",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.180594076504597"
+  },
+  {
+    "id": "123",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.086300767566651"
+  },
+  {
+    "id": "124",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.159379534604884"
+  },
+  {
+    "id": "125",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "126",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "127",
+    "Timezone": "2020-08-21 12:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "128",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.08024746397729"
+  },
+  {
+    "id": "129",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.21451888060386"
+  },
+  {
+    "id": "130",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.64916733909874"
+  },
+  {
+    "id": "131",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.8834510269126"
+  },
+  {
+    "id": "132",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.09510582147962"
+  },
+  {
+    "id": "133",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "134",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "135",
+    "Timezone": "2020-08-21 13:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "136",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.8875457887814"
+  },
+  {
+    "id": "137",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.35810608076185"
+  },
+  {
+    "id": "138",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.79349416578781"
+  },
+  {
+    "id": "139",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.81450233657647"
+  },
+  {
+    "id": "140",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.64370505095936"
+  },
+  {
+    "id": "141",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "142",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "143",
+    "Timezone": "2020-08-21 14:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "144",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.34415818558643"
+  },
+  {
+    "id": "145",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.12136679035103"
+  },
+  {
+    "id": "146",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.28378520961658"
+  },
+  {
+    "id": "147",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.00146274942328"
+  },
+  {
+    "id": "148",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.5469825034818"
+  },
+  {
+    "id": "149",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "150",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "151",
+    "Timezone": "2020-08-21 15:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "152",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.51807192342938"
+  },
+  {
+    "id": "153",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.745398690474447"
+  },
+  {
+    "id": "154",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.20469948477693"
+  },
+  {
+    "id": "155",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.64673624635248"
+  },
+  {
+    "id": "156",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.01244142688313"
+  },
+  {
+    "id": "157",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "158",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "159",
+    "Timezone": "2020-08-21 16:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "160",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.47763130370548"
+  },
+  {
+    "id": "161",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.31259970349431"
+  },
+  {
+    "id": "162",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.11454447078687"
+  },
+  {
+    "id": "163",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.871121015055253"
+  },
+  {
+    "id": "164",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.893625178567267"
+  },
+  {
+    "id": "165",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "166",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "167",
+    "Timezone": "2020-08-21 17:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "168",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.976019770952383"
+  },
+  {
+    "id": "169",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.06181271467078"
+  },
+  {
+    "id": "170",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "1.4855740046208"
+  },
+  {
+    "id": "171",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "1.02435087313917"
+  },
+  {
+    "id": "172",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.763004260717262"
+  },
+  {
+    "id": "173",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "1.38345734242492"
+  },
+  {
+    "id": "174",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "1.37188898660366"
+  },
+  {
+    "id": "175",
+    "Timezone": "2020-08-21 18:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "176",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.506201077817725"
+  },
+  {
+    "id": "177",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.482332361270974"
+  },
+  {
+    "id": "178",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.222990210364003"
+  },
+  {
+    "id": "179",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.652407753174715"
+  },
+  {
+    "id": "180",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.532070204156752"
+  },
+  {
+    "id": "181",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.80141507409248"
+  },
+  {
+    "id": "182",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.442985746746685"
+  },
+  {
+    "id": "183",
+    "Timezone": "2020-08-21 19:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  },
+  {
+    "id": "184",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.374057568949466"
+  },
+  {
+    "id": "185",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.0192731816600384"
+  },
+  {
+    "id": "186",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.523890741229325"
+  },
+  {
+    "id": "187",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.859407195839483"
+  },
+  {
+    "id": "188",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.549431452092138"
+  },
+  {
+    "id": "189",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.41686573997267"
+  },
+  {
+    "id": "190",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.782593216692922"
+  },
+  {
+    "id": "191",
+    "Timezone": "2020-08-21 20:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0.426737886550209"
+  },
+  {
+    "id": "192",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Lamp_1",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.452408511312798"
+  },
+  {
+    "id": "193",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Philips_LED",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.496451134835232"
+  },
+  {
+    "id": "194",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Syska_TubeLight",
+    "Category": "Light",
+    "Energy_consumption_(kwh)": "0.477715906472268"
+  },
+  {
+    "id": "195",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Whirlpool_DoubleDoor",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.808171001569709"
+  },
+  {
+    "id": "196",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Samsung_mini",
+    "Category": "Refrigerator",
+    "Energy_consumption_(kwh)": "0.782917271768136"
+  },
+  {
+    "id": "197",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Voltas_windowAC",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.663043123850137"
+  },
+  {
+    "id": "198",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Whirlpool_SplitAir",
+    "Category": "AC",
+    "Energy_consumption_(kwh)": "0.62321114495407"
+  },
+  {
+    "id": "199",
+    "Timezone": "2020-08-21 21:35:52",
+    "Appliances": "Whirlpool_frontload",
+    "Category": "Washing_Machine",
+    "Energy_consumption_(kwh)": "0"
+  }
+]
