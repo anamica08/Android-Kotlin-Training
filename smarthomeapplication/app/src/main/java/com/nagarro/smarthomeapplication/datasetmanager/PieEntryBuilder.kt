@@ -6,9 +6,11 @@ import android.util.Log
 import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.R
 import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 private const val TAG = "PieEntryBuilder"
-class PieEntryBuilder(val context: Context) {
+class PieEntryBuilder @Inject constructor(@ApplicationContext val context: Context) {
 
     val resources = context.resources
 

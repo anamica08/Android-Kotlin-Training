@@ -11,11 +11,9 @@ import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.datasetmanager.PieEntryBuilder
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class PieChartViewModel @ViewModelInject constructor(@ApplicationContext val context: Context, @Assisted private val savedStateHandle: SavedStateHandle) : ViewModel() {
-
-    private val pieChartEntriesBuilder: PieEntryBuilder = PieEntryBuilder(context)
-
+class PieChartViewModel @ViewModelInject constructor(private val pieChartEntriesBuilder:PieEntryBuilder, @Assisted private val savedStateHandle: SavedStateHandle) : ViewModel() {
     private val entries = MutableLiveData<List<PieEntry>>()
     val liveEntries:LiveData<List<PieEntry>>
     get() = entries
