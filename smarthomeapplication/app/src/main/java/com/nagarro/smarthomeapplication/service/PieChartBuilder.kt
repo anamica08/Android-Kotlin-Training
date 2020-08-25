@@ -1,4 +1,8 @@
 package com.nagarro.smarthomeapplication.service
 
-class PieChartBuilder {
+import android.content.res.Resources
+
+class PieChartBuilder(val resources: Resources) {
+
+
 }

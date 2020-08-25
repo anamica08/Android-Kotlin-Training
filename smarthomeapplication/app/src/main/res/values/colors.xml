@@ -4,8 +4,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="AC">#ffbd69</color>
+    <color name="AC">#5478D5</color>
     <color name="Light">#e7305b</color>
     <color name="Regrigertaor">#9bdeac</color>
-    <color name="WashingMachine">#6974AF</color>
+    <color name="WashingMachine">#ffbd69</color>
+    <color name="Text">#2C2929</color>
 </resources>

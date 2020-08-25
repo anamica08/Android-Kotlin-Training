@@ -1,34 +1,36 @@
 package com.nagarro.smarthomeapplication.ui
 
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModel
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.highlight.Highlight
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.nagarro.smarthomeapplication.R
+import com.nagarro.smarthomeapplication.filereader.PieEntryBuilder
+import com.nagarro.smarthomeapplication.viewmodel.PieChartViewModel
+import kotlinx.android.synthetic.main.fragment_home.*
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.nagarro.smarthomeapplication.viewmodel.PieChartViewModelFactory
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val TAG = "Home"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Home.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Home : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val model: PieChartViewModel by viewModels { PieChartViewModelFactory(resources) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,25 +38,69 @@ class Home : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Home.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Home().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    @RequiresApi(Build.VERSION_CODES.M)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        //add colors
+        val colors: MutableList<Int> = ArrayList()
+        colors.add(resources.getColor(R.color.AC, null))
+        colors.add(resources.getColor(R.color.Light, null))
+        colors.add(resources.getColor(R.color.Regrigertaor, null))
+        colors.add(resources.getColor(R.color.WashingMachine, null))
+
+
+        val description = Description()
+        description.text = "Energy Consumption by appliances (in Kwh $)"
+        description.textSize = 15F
+        pieChart.description = description
+//        pieChart.description.setPosition(0F,0F)
+        pieChart.isRotationEnabled = true
+        pieChart.holeRadius = 50F
+        pieChart.setTransparentCircleAlpha(0)
+        pieChart.setCenterTextSize(15F)
+
+        pieChart.setOnChartValueSelectedListener(object : OnChartValueSelectedListener {
+            override fun onValueSelected(e: Entry?, h: Highlight?) {
+                val energyConsumed: String = e.toString().substring(e.toString().indexOf("y: ") + 1)
+                Toast.makeText(
+                    context, "Energy Consumed in last 24hrs is $energyConsumed Kwh",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+
+            override fun onNothingSelected() {
+
+            }
+        })
+
+        model.getEntries().observe(viewLifecycleOwner, Observer<List<PieEntry>> {
+            val set = PieDataSet(it, null)
+            set.sliceSpace = 2F
+            set.valueTextColor = resources.getColor(R.color.Text,null)
+            set.valueTextSize = 20F
+            set.setColors(colors)
+            //add legend
+            val legend = pieChart.legend
+            legend.isEnabled = true
+            legend.formSize = 15F
+            legend.form = (Legend.LegendForm.SQUARE)
+            legend.textSize = 13F
+            //legend.position = Legend.LegendDirection.Left
+            Log.d(TAG, "onActivityCreated: here outside $set")
+
+            val data = PieData(set)
+            pieChart.data = data
+            pieChart.invalidate() // refresh
+        })
+
+        ac_btn.setOnClickListener {
+
+        }
     }
+    
+    
 }
