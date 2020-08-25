@@ -2,10 +2,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 
     defaultConfig {
         applicationId "com.nagarro.smarthomeapplication"
@@ -59,6 +65,13 @@ dependencies {
     //dagger
     implementation 'com.google.dagger:dagger:2.28.3'
     kapt 'com.google.dagger:dagger-compiler:2.28.3'
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
+    // When using Kotlin.
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
     //mpchart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'

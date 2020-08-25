@@ -1,4 +1,4 @@
-//package com.nagarro.smarthomeapplication.service
+package com.nagarro.smarthomeapplication.service//package com.nagarro.smarthomeapplication.service
 //
 //import android.app.Application
 //import android.content.Context

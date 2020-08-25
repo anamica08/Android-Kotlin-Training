@@ -1,18 +1,20 @@
-package com.nagarro.smarthomeapplication.filereader
+package com.nagarro.smarthomeapplication.datasetmanager
 
+import android.content.Context
 import android.content.res.Resources
-import androidx.lifecycle.LiveData
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineDataSet
+import android.util.Log
 import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.model.data.EnergyConsumption
+import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
 
-class PieEntryBuilder(val resources: Resources) {
+private const val TAG = "PieEntryBuilder"
+class PieEntryBuilder(val context: Context) {
+
+    val resources = context.resources
 
     private fun getEntriesFromCSV(rawResId: Int, label: String): PieEntry {
         var totalEnergyConsumed:Double = 0.0
-        var data: List<EnergyConsumption>? = null
+        var data: List<EnergyConsumption>?
         resources.openRawResource(rawResId).use { stream ->
             data = Parser.toDataSet(stream.reader())
         }
@@ -24,10 +26,10 @@ class PieEntryBuilder(val resources: Resources) {
     }
 
     fun createPieEntries(): MutableList<PieEntry>{
-        val acPieEntry = PieEntryBuilder(resources).getEntriesFromCSV(R.raw.ac, "AC")
-        val lightPieEntry = PieEntryBuilder(resources).getEntriesFromCSV(R.raw.light, "Light")
-        val refrigeratorPieEntry =  PieEntryBuilder(resources).getEntriesFromCSV(R.raw.refrigerator, "Refrigerator")
-        val washingMachinePieEntry = PieEntryBuilder(resources).getEntriesFromCSV(R.raw.washing_machine, "Washing Machine")
+        val acPieEntry = getEntriesFromCSV(R.raw.ac, "AC")
+        val lightPieEntry = getEntriesFromCSV(R.raw.light, "Light")
+        val refrigeratorPieEntry =  getEntriesFromCSV(R.raw.refrigerator, "Refrigerator")
+        val washingMachinePieEntry =getEntriesFromCSV(R.raw.washing_machine, "Washing Machine")
         val entries:MutableList<PieEntry> = ArrayList()
         entries.add(lightPieEntry)
         entries.add(acPieEntry)

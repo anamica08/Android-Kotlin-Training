@@ -1,9 +1,8 @@
-package com.nagarro.smarthomeapplication.filereader
+package com.nagarro.smarthomeapplication.datasetmanager
 
-import com.nagarro.smarthomeapplication.model.data.EnergyConsumption
+import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
 import com.opencsv.CSVReaderBuilder
 import java.io.Reader
-import java.sql.Timestamp
 
 class Parser {
 

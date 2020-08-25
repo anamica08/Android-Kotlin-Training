@@ -1,9 +1,9 @@
-package com.nagarro.smarthomeapplication.filereader
+package com.nagarro.smarthomeapplication.datasetmanager
 
 import android.content.res.Resources
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineDataSet
-import com.nagarro.smarthomeapplication.model.data.EnergyConsumption
+import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
 
 class CSVReader(val resources: Resources) {
 

@@ -1,5 +1,6 @@
 package com.nagarro.smarthomeapplication.ui
 
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.Entry
@@ -19,18 +19,20 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.filereader.PieEntryBuilder
 import com.nagarro.smarthomeapplication.viewmodel.PieChartViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.nagarro.smarthomeapplication.viewmodel.PieChartViewModelFactory
+
+import dagger.hilt.android.AndroidEntryPoint
+import javax.annotation.Resource
 
 private const val TAG = "Home"
 
+@AndroidEntryPoint
 class Home : Fragment() {
 
-    private val model: PieChartViewModel by viewModels { PieChartViewModelFactory(resources) }
+    private val model: PieChartViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +46,8 @@ class Home : Fragment() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
 
         //add colors
         val colors: MutableList<Int> = ArrayList()

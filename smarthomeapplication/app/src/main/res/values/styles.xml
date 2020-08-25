@@ -2,10 +2,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#FFCF44</item>
-        <item name="colorPrimaryDark">#FD9725</item>
-        <item name="colorAccent">#FD9725</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimary">#f69e7b</item>
+        <item name="colorPrimaryDark">#383e56</item>
+        <item name="colorAccent">#eedad1</item>
+        <item name="colorOnPrimary">#d4b5b0</item>
         <item name="colorError">#FD2525</item>
     </style>
 

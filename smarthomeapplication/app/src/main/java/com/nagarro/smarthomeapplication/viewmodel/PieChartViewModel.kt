@@ -1,15 +1,20 @@
 package com.nagarro.smarthomeapplication.viewmodel
 
+import android.content.Context
 import android.content.res.Resources
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.PieEntry
-import com.nagarro.smarthomeapplication.filereader.PieEntryBuilder
+import com.nagarro.smarthomeapplication.datasetmanager.PieEntryBuilder
+import dagger.hilt.android.qualifiers.ApplicationContext
 
-class PieChartViewModel(val resources: Resources) : ViewModel() {
+class PieChartViewModel @ViewModelInject constructor(@ApplicationContext val context: Context, @Assisted private val savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    private val pieChartEntriesBuilder: PieEntryBuilder = PieEntryBuilder(resources)
+    private val pieChartEntriesBuilder: PieEntryBuilder = PieEntryBuilder(context)
 
     private val entries = MutableLiveData<List<PieEntry>>()
     val liveEntries:LiveData<List<PieEntry>>

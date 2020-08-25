@@ -1,6 +1,8 @@
-package com.nagarro.smarthomeapplication.filereader
+package com.nagarro.smarthomeapplication.datasetmanager
 
 import com.github.mikephil.charting.data.LineDataSet
+
+//can be used later
 
 class DatasetConfig {
 
