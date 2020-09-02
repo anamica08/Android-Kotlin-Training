@@ -1,15 +1,16 @@
 package com.nagarro.smarthomeapplication.ui
 
-import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.Entry
@@ -18,20 +19,19 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
+import com.nagarro.smarthomeapplication.constants.Constants
 import com.nagarro.smarthomeapplication.R
 import com.nagarro.smarthomeapplication.viewmodel.PieChartViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-
 import dagger.hilt.android.AndroidEntryPoint
-import javax.annotation.Resource
+import kotlinx.android.synthetic.main.fragment_home.*
 
 private const val TAG = "Home"
 
 @AndroidEntryPoint
-class Home : Fragment() {
-
+class Home : Fragment(),View.OnClickListener  {
+    /**
+     * Viewmodel for LiveData.
+     */
     private val model: PieChartViewModel by viewModels()
 
     override fun onCreateView(
@@ -47,8 +47,6 @@ class Home : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
-
         //add colors
         val colors: MutableList<Int> = ArrayList()
         colors.add(resources.getColor(R.color.AC, null))
@@ -56,22 +54,25 @@ class Home : Fragment() {
         colors.add(resources.getColor(R.color.Regrigertaor, null))
         colors.add(resources.getColor(R.color.WashingMachine, null))
 
-
+        //setting the description of pie chart
         val description = Description()
         description.text = "Energy Consumption by appliances (in Kwh $)"
         description.textSize = 15F
         pieChart.description = description
-//        pieChart.description.setPosition(0F,0F)
+
+        //settings related to effects
         pieChart.isRotationEnabled = true
         pieChart.holeRadius = 50F
+        pieChart.centerText = resources.getString(R.string.centre_Text)
         pieChart.setTransparentCircleAlpha(0)
-        pieChart.setCenterTextSize(15F)
+        pieChart.setCenterTextSize(18F)
 
         pieChart.setOnChartValueSelectedListener(object : OnChartValueSelectedListener {
             override fun onValueSelected(e: Entry?, h: Highlight?) {
                 val energyConsumed: String = e.toString().substring(e.toString().indexOf("y: ") + 1)
                 Toast.makeText(
-                    context, "Energy Consumed in last 24hrs is $energyConsumed Kwh",
+                    context,
+                    "Energy Consumed in last 24hrs is $energyConsumed Kwh",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -80,31 +81,65 @@ class Home : Fragment() {
 
             }
         })
-
+        /**
+         * Observer for LiveData
+         */
         model.getEntries().observe(viewLifecycleOwner, Observer<List<PieEntry>> {
+            // attach the list of pieEntries to pie Data set.
             val set = PieDataSet(it, null)
             set.sliceSpace = 2F
             set.valueTextColor = resources.getColor(R.color.Text,null)
             set.valueTextSize = 20F
             set.setColors(colors)
+
             //add legend
             val legend = pieChart.legend
             legend.isEnabled = true
             legend.formSize = 15F
             legend.form = (Legend.LegendForm.SQUARE)
             legend.textSize = 13F
-            //legend.position = Legend.LegendDirection.Left
-            Log.d(TAG, "onActivityCreated: here outside $set")
 
+            //add data set to pie chart
             val data = PieData(set)
             pieChart.data = data
             pieChart.invalidate() // refresh
         })
 
-        ac_btn.setOnClickListener {
+       //set on click listeners.
+        ac_btn.setOnClickListener(this)
+        refrigerator_btn.setOnClickListener(this)
+        washingmachine_btn.setOnClickListener(this)
+        light_btn.setOnClickListener(this)
 
-        }
     }
-    
-    
+
+    /**
+     * OnClick Listeners for buttons
+     */
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.light_btn ->{
+                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Light)
+                Navigation.findNavController(p0).navigate(action)
+
+            }
+            R.id.ac_btn -> {
+                val action = HomeDirections.homeToList(Constants.ApplianceCategory_AC)
+                Navigation.findNavController(p0).navigate(action)
+
+            }
+            R.id.refrigerator_btn -> {
+                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Refrigerator)
+                Navigation.findNavController(p0).navigate(action)
+
+            }
+            R.id.washingmachine_btn -> {
+                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Washing_Machine)
+                Navigation.findNavController(p0).navigate(action)
+            }
+        }
+
+    }
+
+
 }

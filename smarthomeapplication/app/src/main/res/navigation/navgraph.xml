@@ -3,13 +3,26 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment"
     android:id="@+id/navgraph"
-    >
-
+    app:startDestination="@id/home">
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:name="com.nagarro.smarthomeapplication.ui.Home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/home_to_list"
+            app:destination="@id/AC_ListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AC_ListFragment"
+        android:name="com.nagarro.smarthomeapplication.ui.AC_ListFragment"
+        android:label="Appliances"
+        tools:layout="@layout/fragment_appliancelist" >
+        <argument
+            android:name="applianceCategory"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

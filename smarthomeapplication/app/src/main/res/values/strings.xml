@@ -2,4 +2,11 @@
     <string name="app_name">Smart Home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="centre_Text">Energy expenditure in 24 hrs</string>
+    <string name="name" />
+    <string name="appliance_name">Name</string>
+    <string name="appliance_location">Location</string>
+    <string name="AvgPowerExp">Average Energy Consumtion</string>
+    <string name="textview">TextView</string>
+    <string name="Kwh">Kwh</string>
 </resources>
