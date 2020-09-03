@@ -5,11 +5,15 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.nagarro.smarthomeapplication.data.Appliance
+import com.nagarro.smarthomeapplication.data.*
+import com.nagarro.smarthomeapplication.db.dao.ACDao
+import com.nagarro.smarthomeapplication.db.dao.LightDao
+import com.nagarro.smarthomeapplication.db.dao.RefrigeratorDao
+import com.nagarro.smarthomeapplication.db.dao.WashingMachineDao
 
 @Database(
-    entities = [Appliance::class],
-    version = 3,
+    entities = [Appliance::class,AC::class, Light::class,Refrigerator::class,WashingMachine::class],
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -17,7 +21,12 @@ abstract class ApplianceDatabase() : RoomDatabase() {
     /**
      * Connects database to DAO
      */
-    abstract val applianceDao: ApplianceDao
+    abstract val acDao: ACDao
+    abstract val refrigeratorDao:RefrigeratorDao
+    abstract val lightDao:LightDao
+    abstract val wmDao:WashingMachineDao
+
+
 
     //build room database
     companion object {

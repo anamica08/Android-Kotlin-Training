@@ -1,57 +1,37 @@
 package com.nagarro.smarthomeapplication.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.nagarro.smarthomeapplication.constants.Constants
 import com.nagarro.smarthomeapplication.enums.AC_Mode
 import com.nagarro.smarthomeapplication.enums.FanSpeed
 import com.nagarro.smarthomeapplication.enums.Power_Status
 
 
+@Entity
 class AC(
     appliance_name: String,
     location: String,
-    average_consumption_per_hour: Double
-) : Appliance(appliance_name, location, average_consumption_per_hour, category = Constants.APPLIANCE_CATEGORY_AC) {
-
-    var power_status: Power_Status? = Power_Status.OFF
-        private set(value) {
-            field = value
-        }
-
-    var operatingTemperature: Int? = 27
-        private set(value) {
-            field = value
-        }
-    var mode: AC_Mode? = AC_Mode.AUTO
-        private set(value) {
-            field = value
-        }
-    var fanSpeed: FanSpeed? = FanSpeed.MEDIUM
-        private set(value) {
-            field = value
-        }
-
+    average_consumption_per_hour: Double,
+    var powerStatus: Power_Status,
+    val operatingTemperature:Int,
+    var mode: AC_Mode,
+    var fanSpeed: FanSpeed
+) : Appliance(appliance_name, location, average_consumption_per_hour) {
 
     override fun toString(): String {
-        return "ac(Power: ${power_status?.name}," +
+        return "ac(Power: ${powerStatus.name}," +
                 "Name: $appliance_name," +
                 "Location: $location," +
                 " Average_Consumption: $average_consumption_per_hour," +
                 "Temp: ${operatingTemperature}," +
-                "Mode: ${mode?.name}, " +
-                "Fan Speed: ${fanSpeed?.name})"
+                "Mode: ${mode.name}, " +
+                "Fan Speed: ${fanSpeed.name})"
     }
 
     fun changePowerStatus(switchMode: Power_Status) {
-        this.power_status = switchMode
+        this.powerStatus = switchMode
     }
-
-//    fun decreaseTemp() {
-//        --operatingTemperature
-//    }
-//
-//    fun increaseTemp() {
-//        ++operatingTemperature
-//    }
 
     fun changeMode(mode: AC_Mode) {
         this.mode = mode

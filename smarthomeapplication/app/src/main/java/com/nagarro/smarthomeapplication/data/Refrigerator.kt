@@ -1,37 +1,24 @@
 package com.nagarro.smarthomeapplication.data
 
+import androidx.room.Entity
 import com.nagarro.smarthomeapplication.constants.Constants
 import com.nagarro.smarthomeapplication.enums.Power_Status
 
+
+@Entity
 class Refrigerator(
     appliance_name: String, location: String,
-    average_consumption_per_hour: Double,
+    average_consumption_per_hour: Double,var powerStatus: Power_Status,var freezerTemp: Int, var temp: Int
 ) : Appliance(
-
     appliance_name, location, average_consumption_per_hour,
-    category = Constants.APPLIANCE_CATEGORY_REFRIGERATOR
 ) {
 
-    var power_status: Power_Status = Power_Status.OFF
-        private set(value) {
-            field = value
-        }
-    var freezer_temp: Int = 0
-        private set(value) {
-            field = value
-        }
-
-    var temp: Int = 9
-        private set(value) {
-            field = value
-        }
-
     fun changePowerStatus(switchMode: Power_Status) {
-        this.power_status = switchMode
+        this.powerStatus = switchMode
     }
 
     fun decreaseTempOfFreezer() {
-        --freezer_temp
+        --freezerTemp
     }
 
     fun decreaseTemp() {
@@ -39,7 +26,7 @@ class Refrigerator(
     }
 
     fun increaseTempOfFreezer() {
-        ++freezer_temp
+        ++freezerTemp
     }
 
     fun increaseTemp() {
@@ -47,11 +34,11 @@ class Refrigerator(
     }
 
     override fun toString(): String {
-        return "ac(Power: ${power_status.name}," +
+        return "ac(Power: ${powerStatus.name}," +
                 "Name: $appliance_name," +
                 "Location: $location," +
                 " Average_Consumption: $average_consumption_per_hour," +
-                "Freezer Temperature: $freezer_temp," +
+                "Freezer Temperature: $freezerTemp," +
                 "Temperatur: $temp"
     }
 }

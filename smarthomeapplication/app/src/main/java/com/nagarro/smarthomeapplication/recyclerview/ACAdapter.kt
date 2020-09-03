@@ -1,18 +1,17 @@
 package com.nagarro.smarthomeapplication.recyclerview
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.data.Appliance
+import com.nagarro.smarthomeapplication.data.AC
 import kotlinx.android.synthetic.main.list_item.view.*
 
 private const val TAG = "ApplianceAdapter"
 
-class ApplianceAdapter(private val appliances:List<Appliance>):
-    RecyclerView.Adapter<ApplianceAdapter.ApplianceViewHolder>() {
+class ACAdapter(private val appliances:List<AC>):
+    RecyclerView.Adapter<ACAdapter.ApplianceViewHolder>() {
 
 
     class ApplianceViewHolder(val view: View):RecyclerView.ViewHolder(view)
