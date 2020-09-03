@@ -3,9 +3,8 @@ package com.nagarro.smarthomeapplication.viewmodel
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.db.ApplianceRepository
-import com.nagarro.smarthomeapplication.model.Appliance
+import com.nagarro.smarthomeapplication.data.Appliance
 
 class ApplianceViewModel @ViewModelInject constructor(
     private val repo: ApplianceRepository,

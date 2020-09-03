@@ -1,10 +1,7 @@
-package com.nagarro.smarthomeapplication.service
+package com.nagarro.smarthomeapplication.utils
 
-import com.nagarro.smarthomeapplication.enums.Power_Status
 import com.nagarro.smarthomeapplication.enums.WashingProgram_Mode
-import com.nagarro.smarthomeapplication.model.WashingMachine
 import javax.inject.Inject
-import kotlin.concurrent.fixedRateTimer
 
 //This class is responsible for updating and setting timer for the various modes of washing machine.
 class Timer @Inject constructor() {

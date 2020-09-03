@@ -9,4 +9,9 @@
     <string name="AvgPowerExp">Average Energy Consumtion</string>
     <string name="textview">TextView</string>
     <string name="Kwh">Kwh</string>
+    <string name="power">Power</string>
+    <string name="swing">Swing</string>
+    <string name="direction">Direction</string>
+    <string name="mode">Mode</string>
+    <string name="temperature">Temperature</string>
 </resources>

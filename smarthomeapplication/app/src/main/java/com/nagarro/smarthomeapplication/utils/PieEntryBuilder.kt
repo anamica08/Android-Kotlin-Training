@@ -1,17 +1,15 @@
-package com.nagarro.smarthomeapplication.service
+package com.nagarro.smarthomeapplication.utils
 
 import android.content.Context
 import android.util.Log
 import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.datasetmanager.Parser
-import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
+import com.nagarro.smarthomeapplication.datasetutils.Parser
+import com.nagarro.smarthomeapplication.data.energyunitPOJO.EnergyConsumption
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 private const val TAG = "PieEntryBuilder"
 class PieEntryBuilder @Inject constructor(@ApplicationContext val context: Context) {

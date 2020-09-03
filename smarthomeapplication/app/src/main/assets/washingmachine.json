@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Whirlpool_frontLoadWM",
+    "program": "DAILY_WASH",
+    "timer": "23",
+    "washing": "off"
+  }
+]

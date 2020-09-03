@@ -1,6 +1,6 @@
-package com.nagarro.smarthomeapplication.datasetmanager
+package com.nagarro.smarthomeapplication.datasetutils
 
-import com.nagarro.smarthomeapplication.model.datasetrecord.EnergyConsumption
+import com.nagarro.smarthomeapplication.data.energyunitPOJO.EnergyConsumption
 import com.opencsv.CSVReaderBuilder
 import java.io.Reader
 

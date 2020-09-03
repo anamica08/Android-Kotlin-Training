@@ -119,22 +119,22 @@ class Home : Fragment(),View.OnClickListener  {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.light_btn ->{
-                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Light)
+                val action = HomeDirections.homeToList(Constants.APPLIANCE_CATEGORY_LIGHT)
                 Navigation.findNavController(p0).navigate(action)
 
             }
             R.id.ac_btn -> {
-                val action = HomeDirections.homeToList(Constants.ApplianceCategory_AC)
+                val action = HomeDirections.homeToList(Constants.APPLIANCE_CATEGORY_AC)
                 Navigation.findNavController(p0).navigate(action)
 
             }
             R.id.refrigerator_btn -> {
-                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Refrigerator)
+                val action = HomeDirections.homeToList(Constants.APPLIANCE_CATEGORY_REFRIGERATOR)
                 Navigation.findNavController(p0).navigate(action)
 
             }
             R.id.washingmachine_btn -> {
-                val action = HomeDirections.homeToList(Constants.ApplianceCategory_Washing_Machine)
+                val action = HomeDirections.homeToList(Constants.APPLIANCE_CATEGORY_WASHINGMACHINE)
                 Navigation.findNavController(p0).navigate(action)
             }
         }

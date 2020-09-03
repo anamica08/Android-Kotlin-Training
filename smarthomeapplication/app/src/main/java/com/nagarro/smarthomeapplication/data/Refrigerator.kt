@@ -1,15 +1,21 @@
-package com.nagarro.smarthomeapplication.model
+package com.nagarro.smarthomeapplication.data
 
+import com.nagarro.smarthomeapplication.constants.Constants
 import com.nagarro.smarthomeapplication.enums.Power_Status
 
 class Refrigerator(
-    power_status: Power_Status, appliance_name: String, location: String,
-    average_consumption_per_day: Double,
+    appliance_name: String, location: String,
+    average_consumption_per_hour: Double,
 ) : Appliance(
-    power_status,
-    appliance_name, location, average_consumption_per_day,
-    category = "refrigerator"
+
+    appliance_name, location, average_consumption_per_hour,
+    category = Constants.APPLIANCE_CATEGORY_REFRIGERATOR
 ) {
+
+    var power_status: Power_Status = Power_Status.OFF
+        private set(value) {
+            field = value
+        }
     var freezer_temp: Int = 0
         private set(value) {
             field = value
@@ -44,7 +50,7 @@ class Refrigerator(
         return "ac(Power: ${power_status.name}," +
                 "Name: $appliance_name," +
                 "Location: $location," +
-                " Average_Consumption: $average_consumption_per_day," +
+                " Average_Consumption: $average_consumption_per_hour," +
                 "Freezer Temperature: $freezer_temp," +
                 "Temperatur: $temp"
     }

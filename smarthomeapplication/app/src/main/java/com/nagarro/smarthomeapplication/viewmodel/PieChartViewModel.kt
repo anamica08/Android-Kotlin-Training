@@ -1,6 +1,5 @@
 package com.nagarro.smarthomeapplication.viewmodel
 
-import android.util.Log
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -8,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.PieEntry
-import com.nagarro.smarthomeapplication.service.PieEntryBuilder
+import com.nagarro.smarthomeapplication.utils.PieEntryBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +27,7 @@ class PieChartViewModel @ViewModelInject constructor(private val pieChartEntries
         launch {
             entries.value = pieChartEntriesBuilder.createPieEntries()
             val name = Thread.currentThread().name
-            Log.d(TAG, "getEntries:$name ")
+
         }
         return liveEntries
     }

@@ -1,22 +1,27 @@
-package com.nagarro.smarthomeapplication.model
+package com.nagarro.smarthomeapplication.data
 
+import com.nagarro.smarthomeapplication.constants.Constants
 import com.nagarro.smarthomeapplication.enums.Power_Status
 import com.nagarro.smarthomeapplication.enums.WashingProgram_Mode
-import com.nagarro.smarthomeapplication.service.Timer
+import com.nagarro.smarthomeapplication.utils.Timer
 import javax.inject.Inject
 import kotlin.concurrent.fixedRateTimer
 
 class WashingMachine(
-    power_status: Power_Status, appliance_name: String, location: String,
-    average_consumption_per_day: Double
+    appliance_name: String, location: String,
+    average_consumption_per_hour: Double
 ) : Appliance(
-    power_status,
-    appliance_name, location, average_consumption_per_day,
-    category = "washing_machine"
+    appliance_name, location, average_consumption_per_hour,
+    category = Constants.APPLIANCE_CATEGORY_WASHINGMACHINE
 ) {
     //dependency
     @Inject
     lateinit var timerService: Timer
+
+    var power_status: Power_Status = Power_Status.OFF
+        private set(value) {
+            field = value
+        }
 
     var programMode: WashingProgram_Mode = WashingProgram_Mode.AUTO_OPTIMAL_WASH
         private set(value) {
@@ -87,7 +92,7 @@ class WashingMachine(
         return "ac(Power: ${power_status.name}," +
                 "Name: $appliance_name.," +
                 "Location: $location," +
-                " Average_Consumption: $average_consumption_per_day," +
+                " Average_Consumption: $average_consumption_per_hour," +
                 "Washing: ${washing.name}," +
                 "Timer: $timer,"+
                 "Program: $programMode"

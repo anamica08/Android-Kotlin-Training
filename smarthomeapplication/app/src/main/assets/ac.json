@@ -1,0 +1,16 @@
+[
+  {
+    "powerStatus": "ON",
+    "name": "Voltas_WindowAC",
+    "operatingTemp": "22",
+    "mode": "COOL",
+    "fanSpeed": "HIGH"
+  },
+  {
+    "powerStatus": "OFF",
+    "name": "Whirlpool_splitAir",
+    "operatingTemp": "18",
+    "mode": "AUTO",
+    "fanSpeed": "MEDIUM"
+  }
+]

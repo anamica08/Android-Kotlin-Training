@@ -1,9 +1,8 @@
 package com.nagarro.smarthomeapplication.db
 
 
-import android.util.Log
 import androidx.lifecycle.LiveData
-import com.nagarro.smarthomeapplication.model.Appliance
+import com.nagarro.smarthomeapplication.data.Appliance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,23 +25,7 @@ class ApplianceRepository @Inject constructor(private val applianceDao: Applianc
 
     }
 
-    suspend fun getCount(): Int {
-        val count: Int
-        withContext(Dispatchers.IO) {
-            count = applianceDao.getCount()
-            Log.d(TAG, "getCount: ${applianceDao.getCount()}")
-        }
-        return count
-    }
-
-
     fun fetchAppliance(category: String): LiveData<List<Appliance>> {
-//        val list:List<Appliance>
-//        withContext(Dispatchers.IO) {
-//            list = applianceDao.loadAllAppliancesByCategory(category)
-//            Log.d(TAG, "getCount: ${applianceDao.getCount()}")
-//        }
-//        return  list
         return applianceDao.loadAllAppliancesByCategory(category)
     }
 

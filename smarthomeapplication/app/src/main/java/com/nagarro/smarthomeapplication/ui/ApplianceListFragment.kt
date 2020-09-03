@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.model.Appliance
+import com.nagarro.smarthomeapplication.data.Appliance
 import com.nagarro.smarthomeapplication.recyclerview.ApplianceAdapter
 import com.nagarro.smarthomeapplication.viewmodel.ApplianceViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,9 +55,9 @@ class AC_ListFragment : Fragment() {
 
         argCategory?.let {
             model.getAllAppliance(it).observe(viewLifecycleOwner, Observer<List<Appliance>> {
-                for (item in it) {
-                    Log.d(TAG, "onActivityCreated: ${item.toString()}")
-                }
+//                for (item in it) {
+//                    Log.d(TAG, "onActivityCreated: ${item.toString()}")
+//                }
                 applianceRecyclerView.adapter =
                     activity?.applicationContext?.let { it1 -> ApplianceAdapter(it) }
 

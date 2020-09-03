@@ -5,11 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.nagarro.smarthomeapplication.model.Appliance
+import com.nagarro.smarthomeapplication.data.Appliance
 
 @Database(
     entities = [Appliance::class],
-    version = 1,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
