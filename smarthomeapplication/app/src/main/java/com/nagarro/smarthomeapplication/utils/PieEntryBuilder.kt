@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import com.github.mikephil.charting.data.PieEntry
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.datasetutils.Parser
 import com.nagarro.smarthomeapplication.data.energyunitPOJO.EnergyConsumption
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers

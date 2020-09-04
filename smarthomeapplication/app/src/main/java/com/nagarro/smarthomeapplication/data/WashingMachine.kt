@@ -12,9 +12,10 @@ import kotlin.concurrent.fixedRateTimer
 @Entity
 class WashingMachine(
     appliance_name: String, location: String,
-    average_consumption_per_hour: Double,var powerStatus: Power_Status,var programMode: WashingProgram_Mode,var washing: Power_Status, var timer: Int = 0
+    average_consumption_per_hour: Double, var powerStatus: Power_Status, var programMode: WashingProgram_Mode, var washing: Power_Status, var timer: Int = 0,
+    category: String = Constants.APPLIANCE_CATEGORY_WASHINGMACHINE
 ) : Appliance(
-    appliance_name, location, average_consumption_per_hour,
+    appliance_name, location, average_consumption_per_hour, category
 ) {
 
     @Inject

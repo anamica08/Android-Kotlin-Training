@@ -10,10 +10,11 @@ import com.nagarro.smarthomeapplication.db.dao.ACDao
 import com.nagarro.smarthomeapplication.db.dao.LightDao
 import com.nagarro.smarthomeapplication.db.dao.RefrigeratorDao
 import com.nagarro.smarthomeapplication.db.dao.WashingMachineDao
+import javax.inject.Singleton
 
 @Database(
     entities = [Appliance::class,AC::class, Light::class,Refrigerator::class,WashingMachine::class],
-    version = 4,
+    version = 6,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -29,6 +30,7 @@ abstract class ApplianceDatabase() : RoomDatabase() {
 
 
     //build room database
+    @Singleton
     companion object {
         @Volatile
         private var INSTANCE: ApplianceDatabase? = null

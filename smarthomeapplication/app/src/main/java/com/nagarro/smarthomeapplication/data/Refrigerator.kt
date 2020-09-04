@@ -8,9 +8,10 @@ import com.nagarro.smarthomeapplication.enums.Power_Status
 @Entity
 class Refrigerator(
     appliance_name: String, location: String,
-    average_consumption_per_hour: Double,var powerStatus: Power_Status,var freezerTemp: Int, var temp: Int
+    average_consumption_per_hour: Double, var powerStatus: Power_Status, var freezerTemp: Int, var temp: Int,
+    category: String = Constants.APPLIANCE_CATEGORY_REFRIGERATOR
 ) : Appliance(
-    appliance_name, location, average_consumption_per_hour,
+    appliance_name, location, average_consumption_per_hour, category
 ) {
 
     fun changePowerStatus(switchMode: Power_Status) {

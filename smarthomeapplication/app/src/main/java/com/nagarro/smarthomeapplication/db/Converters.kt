@@ -6,6 +6,10 @@ import com.nagarro.smarthomeapplication.enums.FanSpeed
 import com.nagarro.smarthomeapplication.enums.Power_Status
 import com.nagarro.smarthomeapplication.enums.WashingProgram_Mode
 
+/**
+ * these type converters are required to save and fetch enum values to and from database.
+ *
+ */
 class Converters {
     @TypeConverter
     fun toPowerStatus(value:String?): Power_Status? {

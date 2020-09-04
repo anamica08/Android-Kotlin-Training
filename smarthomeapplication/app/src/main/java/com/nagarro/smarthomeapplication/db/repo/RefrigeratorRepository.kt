@@ -12,7 +12,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-class RefrigeratorRepository @Inject constructor(private val refrigeratorDao: RefrigeratorDao) : CoroutineScope {
+class RefrigeratorRepository @Inject constructor(private val refrigeratorDao: RefrigeratorDao) :
+    CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main
 
@@ -20,13 +21,11 @@ class RefrigeratorRepository @Inject constructor(private val refrigeratorDao: Re
         launch {
             insertRefrigeratorToDB(appliance)
         }
-
     }
 
     fun getListofRefrigerators(): LiveData<List<Refrigerator>> {
         return refrigeratorDao.getAllRefrigerators()
     }
-
 
     private suspend fun insertRefrigeratorToDB(appliance: Refrigerator) {
         withContext(Dispatchers.IO) {

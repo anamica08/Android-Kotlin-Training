@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nagarro.smarthomeapplication.R
-import com.nagarro.smarthomeapplication.data.AC
 import com.nagarro.smarthomeapplication.data.Light
+import com.nagarro.smarthomeapplication.enums.Power_Status
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class LightAdapter(private val appliances:List<Light>):
@@ -28,7 +28,7 @@ class LightAdapter(private val appliances:List<Light>):
         holder.view.applianceName_tv.text = appliances[position].appliance_name
         holder.view.location_tv.text = appliances[position].location
         holder.view.powerExpense_tv.text = appliances[position].average_consumption_per_hour.toString()
-        //holder.view.power_switch.isChecked = appliances[position].power_status == Power_Status.ON
+        holder.view.power_switch.isChecked = appliances[position].powerStatus == Power_Status.ON
     }
 
 

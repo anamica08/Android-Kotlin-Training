@@ -16,8 +16,8 @@ class AC(
     var powerStatus: Power_Status,
     val operatingTemperature:Int,
     var mode: AC_Mode,
-    var fanSpeed: FanSpeed
-) : Appliance(appliance_name, location, average_consumption_per_hour) {
+    var fanSpeed: FanSpeed, category:String = Constants.APPLIANCE_CATEGORY_AC
+) : Appliance(appliance_name, location, average_consumption_per_hour,category) {
 
     override fun toString(): String {
         return "ac(Power: ${powerStatus.name}," +
@@ -29,15 +29,15 @@ class AC(
                 "Fan Speed: ${fanSpeed.name})"
     }
 
-    fun changePowerStatus(switchMode: Power_Status) {
-        this.powerStatus = switchMode
-    }
-
-    fun changeMode(mode: AC_Mode) {
-        this.mode = mode
-    }
-
-    fun changeFanSpeed(speed: FanSpeed) {
-        this.fanSpeed = speed
-    }
+//    fun changePowerStatus(switchMode: Power_Status) {
+//        this.powerStatus = switchMode
+//    }
+//
+//    fun changeMode(mode: AC_Mode) {
+//        this.mode = mode
+//    }
+//
+//    fun changeFanSpeed(speed: FanSpeed) {
+//        this.fanSpeed = speed
+//    }
 }

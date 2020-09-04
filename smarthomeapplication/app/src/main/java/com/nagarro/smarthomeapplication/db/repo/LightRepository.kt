@@ -13,32 +13,25 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 class LightRepository @Inject constructor(private val lightDao: LightDao) : CoroutineScope {
-        override val coroutineContext: CoroutineContext
-            get() = Dispatchers.Main
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main
 
-        fun addlight(appliance: Light) {
-            launch {
-                insertLightToDB(appliance)
-            }
-
-        }
-        fun getListofLights(): LiveData<List<Light>> {
-            return lightDao.getAllLights()
-        }
-//    suspend fun fetchListofACs(): LiveData<List<AC>> {
-//        var list: List<AC> = mutableListOf()
-//        withContext(Dispatchers.IO) {
-//            list = acDao.getAllAcs()
-//        }
-//        return list
-//    }
-
-        private suspend fun insertLightToDB(appliance: Light) {
-            withContext(Dispatchers.IO) {
-                lightDao.addApplianceLight(appliance)
-            }
+    fun addlight(appliance: Light) {
+        launch {
+            insertLightToDB(appliance)
         }
 
+    }
+
+    fun getListofLights(): LiveData<List<Light>> {
+        return lightDao.getAllLights()
+    }
+
+    private suspend fun insertLightToDB(appliance: Light) {
+        withContext(Dispatchers.IO) {
+            lightDao.addApplianceLight(appliance)
+        }
+    }
 
 
 }

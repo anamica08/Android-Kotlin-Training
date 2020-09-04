@@ -21,16 +21,10 @@ class ACRepository @Inject constructor(private val acDao: ACDao) : CoroutineScop
         }
 
     }
-    fun getListofAcs():LiveData<List<AC>>{
+
+    fun getListofAcs(): LiveData<List<AC>> {
         return acDao.getAllAcs()
     }
-//    suspend fun fetchListofACs(): LiveData<List<AC>> {
-//        var list: List<AC> = mutableListOf()
-//        withContext(Dispatchers.IO) {
-//            list = acDao.getAllAcs()
-//        }
-//        return list
-//    }
 
     private suspend fun insertACToDB(appliance: AC) {
         withContext(Dispatchers.IO) {

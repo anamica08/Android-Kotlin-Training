@@ -11,6 +11,7 @@ open class Appliance(
     var appliance_name: String,
     var location: String,
     var average_consumption_per_hour: Double,
+    var category:String
 
 
 

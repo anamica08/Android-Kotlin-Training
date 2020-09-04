@@ -1,4 +1,4 @@
-package com.nagarro.smarthomeapplication.datasetutils
+package com.nagarro.smarthomeapplication.utils
 
 import com.nagarro.smarthomeapplication.data.energyunitPOJO.EnergyConsumption
 import com.opencsv.CSVReaderBuilder
