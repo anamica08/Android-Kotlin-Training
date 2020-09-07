@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f69e7b</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="AC">#5478D5</color>
+    <color name="Light">#e7305b</color>
+    <color name="Regrigertaor">#9bdeac</color>
+    <color name="WashingMachine">#ffbd69</color>
+    <color name="Text">#2C2929</color>
+</resources>
